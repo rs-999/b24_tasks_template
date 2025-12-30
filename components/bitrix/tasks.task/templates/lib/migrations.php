@@ -7,11 +7,6 @@ use Bitrix\Main\Application;
 
 $connection = Application::getConnection();
 
-$connection->query("
-ALTER TABLE b_tasks
-DROP COLUMN PLAN_DATE
-");
-
 $connection->query("ALTER TABLE b_tasks
 ADD COLUMN PLAN_DATE VARCHAR(55) NOT NULL;");
 

@@ -218,8 +218,121 @@ if (
 	<?php
 }
 ?>
+<style>
 
+/*=========================== WebNet ======================*/
 
+.project {
+  position: absolute;
+  background: white;
+  z-index: 999999;
+  top: 4rem;
+  width: 98%;
+}
+.project::before {
+  content: "";
+  display: block;
+  padding: 3px;
+  min-height: 3rem;
+  background: url("/local/components/bitrix/tasks.task/templates/view/img/logo-rb.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position:0% 50%;
+}
+.project-container
+{
+    display:flex;
+    width:100%;
+    box-sizing:border-box;
+}
+.project-center-column
+{
+    width:100%;
+    padding:3px;
+    box-sizing:border-box;
+}
+.project-left-column
+{
+    width:40%;
+    padding:3px;
+    box-sizing:border-box;
+}
+
+.project-right-column
+{
+    width:60%;
+    padding:3px;
+    box-sizing:border-box;
+}
+
+.project-table
+{
+    width:100%;
+    border-collapse:collapse;
+}
+
+.project-table-title
+{
+    font-weight:700;
+    color:white;
+    background:rgb(44,86,151);
+    padding:6px 10px;
+    margin-bottom:6px;
+}
+
+.project-table p
+{
+    margin:6px 0;
+}
+
+.events-header,
+.events-row
+{
+    display:grid;
+    grid-template-columns:50% 16.6% 16.6% 16.6%;
+    width:100%;
+    margin-top: -1px;
+}
+
+.events-header-full,
+.events-row-full
+{
+    display: flex;
+    justify-content: space-around;
+}
+
+.events-header-full div,
+.events-row-full div {
+  width: 100%;
+}
+
+.events-header div,
+.events-header-full div
+{
+    background:rgb(44,86,151);
+    color:white;
+    font-weight:700;
+    padding:6px;
+    border:1px solid #fff;
+    box-sizing:border-box;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+    hyphens: auto;
+}
+
+.events-row div,
+.events-row-full div
+{
+    background:white;
+    color:black;
+    padding:6px;
+    border:1px solid #ccc;
+    box-sizing:border-box;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+    hyphens: auto;
+}
+</style>
 <?php
 $connection = Application::getConnection();
 
@@ -370,7 +483,7 @@ if ($checkDirection) {
               echo '<div contenteditable="true" class="current_state" data-type="current_state" data-task-id="'.$v['task_id'].'">'.$v['current_state'].'</div>';
               echo '<div contenteditable="true" class="target_state" data-type="target_state" data-task-id="'.$v['task_id'].'">'.$v['target_state'].'</div>';
               echo '<div contenteditable="true" class="metrics" data-type="metrics" data-task-id="'.$v['task_id'].'">'.$v['metrics'].'</div>';
-              echo '<div contenteditable="true" class="kpi_2025" data-type="kpi_2025" data-task-id="'.$v['task_id'].'">'.$v['kpi_2025'].'</div>';
+              echo '<div contenteditable="true" class="kpi_206" data-type="kpi_2026" data-task-id="'.$v['task_id'].'">'.$v['kpi_2026'].'</div>';
               echo '<div contenteditable="true" class="kpi_fact" data-type="kpi_fact" data-task-id="'.$v['task_id'].'">'.$v['kpi_fact'].'</div>';
               echo '<div contenteditable="true" class="resources" data-type="resources" data-task-id="'.$v['task_id'].'">'.$v['resources'].'</div>';
             echo '</div>';
@@ -385,7 +498,7 @@ if ($checkDirection) {
     let current_state = document.querySelectorAll(".current_state");
     let target_state = document.querySelectorAll(".target_state");
     let metrics = document.querySelectorAll(".metrics");
-    let kpi_2025 = document.querySelectorAll(".kpi_2025");
+    let kpi_2026 = document.querySelectorAll(".kpi_2026");
     let kpi_fact = document.querySelectorAll(".kpi_fact");
     let resources = document.querySelectorAll(".resources");
 
@@ -419,7 +532,7 @@ if ($checkDirection) {
       changeData(el);
     });
 
-    kpi_2025.forEach(el => {
+    kpi_2026.forEach(el => {
       changeData(el);
     });
 
@@ -462,7 +575,7 @@ if ($checkProcess) {
               <div>'.$process['current_state'].'</div>
               <div>'.$process['target_state'].'</div>
               <div>'.$process['metrics'].'</div>
-              <div>'.$process['kpi_2025'].'</div>
+              <div>'.$process['kpi_2026'].'</div>
               <div>'.$process['kpi_fact'].'</div>
               <div>'.$process['resources'].'</div>
           </div>
