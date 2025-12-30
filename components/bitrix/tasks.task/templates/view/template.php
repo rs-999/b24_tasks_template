@@ -828,7 +828,7 @@ if ($checkProject) {
 }
 
 if (!$checkDirection && !$checkProcess && !$checkProject) {
-  $allowedUsers = [1, 274, 297, 234];
+  $allowedUsers = [274, 297, 234];
 
   if (in_array($arParams["USER_ID"], $allowedUsers, true)) {
     echo '<div class="ui-btn-container" style="margin: 0;">
